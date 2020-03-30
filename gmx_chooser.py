@@ -80,9 +80,10 @@ if __name__ == '__main__':
         elif sys.argv[1].startswith('gmx'):
             if len(sys.argv) > 2 and sys.argv[2].startswith('mdrun'):
                 gromacs.append(gromacs[0].replace('gmx', 'mdrun'))
-        if rdtscp_enabled:
-            gromacs_rdtscp = [gmx + config.SUFFIX['rdtscp']['ON'] for gmx in gromacs]
-            gromacs = gromacs_rdtscp + gromacs
+
+    if rdtscp_enabled:
+        gromacs_rdtscp = [gmx + config.SUFFIX['rdtscp']['ON'] for gmx in gromacs]
+        gromacs = gromacs_rdtscp + gromacs
 
     chosen_dir, chosen_gmx, chosen_args = None, None, None
     for gmx in gromacs:
