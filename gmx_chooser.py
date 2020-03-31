@@ -93,7 +93,6 @@ if __name__ == '__main__':
         print('No appropriate GROMACS installaiton available. Exiting...')
         sys.exit()
 
-
     if sys.argv[1].startswith('gmx'):
         # remove subcommand  'mdrun' from gmx and gmx_mpi
         if len(sys.argv) > 2 and chosen_gmx.startswith('mdrun'):
