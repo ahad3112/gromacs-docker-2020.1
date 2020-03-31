@@ -46,4 +46,11 @@ Bind the directory that you want Docker to get access to. Below is an example of
 
 #### With Singularity
 
+First, build Singularity image from Docker image as follows:
+
+    singularity build <name of image to be built> docker://<docker_image>
+
+Below is an example of running `mdrun` with `mdrun_mpi` wrapper:
+
+    mpirun -np <no of processes> singulairty exec -B <host directory to bind> <singularity image> mdrun_mpi -s <.tpr file> -deffnm <ouput_file_name>
 
