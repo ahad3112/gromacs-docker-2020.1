@@ -1,7 +1,5 @@
 # GROMACS 2020.1
 
-[![bioexcel/gromacs](https://img.shields.io/badge/docker-gromacs%2Fgromacs-1488C6.svg?logo=docker)]
-
 ## Building Image
 
 Building image is initiated by `docker_build.py` script. One can choose to install multiple version GROMACS based on the following options:
