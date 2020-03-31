@@ -25,7 +25,8 @@ Avaibale option of `docker_build.py` can be viewed as follows:
                        [-d {on,off} [{on,off} ...]] [-y]
 
 ## Running Image
-The Available GROMACS wrapper binaries will be the followings based on `mpi` enabled or disabled and `mdrun_only` enabled or disabled:
+The Available GROMACS wrapper binaries will be the followings based on `mpi` enabled or disabled and `mdrun_only` enabled or disabled
+option on `docker_build.py`:
 
 * `gmx`
 * `gmx_mpi`
@@ -36,14 +37,14 @@ Wrapper binaries `mdrun` and `mdrun_mpi` represent `mdrun_only` installation of 
 To use other GROMACS tools such as `pdb2gmx`, `grompp`, `editconf` etc. full installation
 of GROMACS are required. Full installation of GROMACS are wrapped within `gmx` and `gmx_mpi`.
 
-```Without Singularity : ```
+### Without Singularity
 
 Bind the directory that you want Docker to get access to. Below is an example of running `mdrun` module using `gmx` wrapper:
 
     mkdir $HOME/data
     docker run -v $HOME/data:/data -w /data -it <image_name> gmx mdrun -s <.tpr file> -deffnm <ouput_file_name>
 
-```With Singularity : ```
+### With Singularity
 
 
 ## Contribute
