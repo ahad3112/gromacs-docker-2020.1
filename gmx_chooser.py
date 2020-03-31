@@ -93,10 +93,15 @@ if __name__ == '__main__':
         print('No appropriate GROMACS installaiton available. Exiting...')
         sys.exit()
 
-    #  Need to remove subcommand  'mdrun' command from gmx and gmx_mpi
+
     if sys.argv[1].startswith('gmx'):
+        # remove subcommand  'mdrun' from gmx and gmx_mpi
         if len(sys.argv) > 2 and chosen_gmx.startswith('mdrun'):
             del chosen_args[0]
+    elif sys.argv[1].startswith('mdrun'):
+        # add subcommand  'mdrun' to gmx and gmx_mpi
+        if chosen_gmx.startswith('gmx'):
+            chosen_args.insert(0, 'mdrun')
 
     # running the binary
     run(binary_directory=chosen_dir[1], gmx=chosen_gmx, args=chosen_args)
