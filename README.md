@@ -1,6 +1,6 @@
 # GROMACS 2020.1
 
-[![bioexcel/gromacs](https://img.shields.io/badge/docker-gromacs%2Fgromacs-1488C6.svg?logo=docker)](https://hub.docker.com/r/gromacs/gromacs/ "gromacs/gromacs")
+[![bioexcel/gromacs](https://img.shields.io/badge/docker-gromacs%2Fgromacs-1488C6.svg?logo=docker)]
 
 ## Building Image
 
