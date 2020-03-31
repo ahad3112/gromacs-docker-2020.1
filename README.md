@@ -47,5 +47,3 @@ Bind the directory that you want Docker to get access to. Below is an example of
 #### With Singularity
 
 
-## Contribute
-
