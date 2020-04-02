@@ -30,7 +30,7 @@ ARG FFTW_MD5=0d5915d7d39b3253c1cc05030d79ac47
 
 # GROMACS
 ARG GROMACS_VERSION=2020.1
-# ARG GROMACS_MD5=
+ARG GROMACS_MD5=1c1b5c0f904d4eac7e3515bc01ce3781
 
 # Gromacs Installation option
 ARG ARCHITECTURES="SSE2 AVX_256 AVX2_256 AVX_512"
@@ -111,8 +111,8 @@ WORKDIR /gromacs-src
 
 # Download
 RUN wget -O gromacs.tar.gz http://ftp.gromacs.org/pub/gromacs/gromacs-${GROMACS_VERSION}.tar.gz \
-    # && echo "${GROMACS_MD5} gromacs.tar.gz" > gromacs.tar.gz.hd5 \
-    # && md5sum -c gromacs.tar.gz.hd5 \
+    && echo "${GROMACS_MD5} gromacs.tar.gz" > gromacs.tar.gz.hd5 \
+    && md5sum -c gromacs.tar.gz.hd5 \
     && gunzip gromacs.tar.gz \
     && tar -xvf gromacs.tar \
     && mv gromacs-${GROMACS_VERSION}/* .
